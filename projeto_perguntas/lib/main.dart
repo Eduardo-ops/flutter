@@ -7,6 +7,8 @@ void main() =>
 
 /* Tornando o "perguntaApp" em um widget */
 class PerguntasApp extends StatelessWidget {
+  final perguntas = ['Qual sua cor preferida ?', 'Qual marca preferida ?'];
+
   /*  Sobrescrevendo método build */
   @override
   Widget build(BuildContext context) {
@@ -19,6 +21,22 @@ class PerguntasApp extends StatelessWidget {
           /* Atributo "Title" que retorna um widget "Text" */
           title: Text('Questions'),
         )),
+        /* Atributo "Body" que retorna um widget "Column" */
+        body: Column(
+          /* Atributo "children" nos permite retornar varios widget iguais */
+          children: [
+            /* Widget "Text" que recebe como valor um array de strings */
+            Text(perguntas[0]),
+            /* Widget "RaiseButton" com parametros */
+            RaisedButton(
+                /* Parâmetro "child" que possibilita retornar outro Component
+              Widget*/
+                child: Text('Resposta 1'),
+                onPressed: () {}),
+            RaisedButton(child: Text('Resposta 2'), onPressed: () {}),
+            RaisedButton(child: Text('Resposta 3'), onPressed: () {}),
+          ],
+        ),
       ),
     );
   }
