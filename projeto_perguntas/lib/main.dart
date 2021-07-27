@@ -5,6 +5,10 @@ void main() =>
     /* Arrow Function que nos retorna um widget instanciado. */
     runApp(new PerguntasApp());
 
+void responder() {
+  print("Você respondeu!");
+}
+
 /* Tornando o "perguntaApp" em um widget */
 class PerguntasApp extends StatelessWidget {
   final perguntas = ['Qual sua cor preferida ?', 'Qual marca preferida ?'];
@@ -32,9 +36,18 @@ class PerguntasApp extends StatelessWidget {
                 /* Parâmetro "child" que possibilita retornar outro Component
               Widget*/
                 child: Text('Resposta 1'),
-                onPressed: () {}),
-            RaisedButton(child: Text('Resposta 2'), onPressed: () {}),
-            RaisedButton(child: Text('Resposta 3'), onPressed: () {}),
+                /* Parâmetro "onpressed" que permite retonar uma função como
+                parâmetro */
+                onPressed: responder),
+            RaisedButton(
+                child: Text('Resposta 2'),
+                onPressed: () {
+                  print('Selecionado');
+                }),
+            RaisedButton(
+              child: Text('Resposta 3'),
+              onPressed: () => print('Selecionado'),
+            ),
           ],
         ),
       ),
