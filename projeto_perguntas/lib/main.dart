@@ -5,6 +5,7 @@ void main() =>
     /* Arrow Function que nos retorna um widget instanciado. */
     runApp(new PerguntasApp());
 
+/* Função void "responder" */
 void responder() {
   print("Você respondeu!");
 }
@@ -41,11 +42,14 @@ class PerguntasApp extends StatelessWidget {
                 onPressed: responder),
             RaisedButton(
                 child: Text('Resposta 2'),
+                /* Parâmetro "onpressed" que permite retornar uma mensagem. */
                 onPressed: () {
                   print('Selecionado');
                 }),
             RaisedButton(
               child: Text('Resposta 3'),
+              /* Parâmetro "onpressed" que permite retornar através
+              de uma arrow function uma mensagem. */
               onPressed: () => print('Selecionado'),
             ),
           ],
